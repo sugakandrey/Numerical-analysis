@@ -2,17 +2,21 @@
 \begin{align*}
   &\frac{d\rho}{dt} = -\rho(\nabla \cdot \vec{V}) \\
   &\rho \frac{d \vec{V}}{dt} = \nabla \cdot \overleftrightarrow{P} + \rho \vec{f} \\
-  & \rho \frac{d E}{dt} = \overleftrightarrow{P} \cdot \vec{S} - \nabla \cdot \vec{q} + \rho Q
-  &\rho(\vec{r}. t),\ \vec{V}(\vec{r}, t), E(\vec{r}, t)\\ 
+  & \rho \frac{d E}{dt} = \overleftrightarrow{P} \cdot \vec{S} - \nabla \cdot \vec{q} + \rho Q \\
+  &\rho(\vec{r}. t),\ \vec{V}(\vec{r}, t), E(\vec{r}, t) \\
   &\overleftrightarrow{P} = \overleftrightarrow{P} (\overleftrightarrow{S}),\ \vec{q} = \vec{q}(E)
 \end{align*}
 
 \begin{defn}
-  Текучая среда - среда, которая приходит в движение под действием сколь
+  Текучая среда --- среда, которая приходит в движение под действием сколь
   угодно малого касательного напряжения.
 \end{defn}
 
-*pic*
+\begin{figure}[h]
+    \centering
+    \input{pic11}
+    \caption{Напряжения в твёрдом теле}
+\end{figure}
 
 \begin{note}
   Если среда находится в состоянии покая, значит в ней нет касательных напряжений.
@@ -90,12 +94,15 @@ p_n = p_{11} = p_{22} = p_{33} = \underbrace{-P}_{Давление}
 Уравнение переноса импульса.
 \begin{align*}
   & \rho \frac{d\vec{V}}{dt} = \nabla \cdot \overleftrightarrow{P} + \rho \cdot \vec{f} \\
-  & \nabla \cdot \overleftrightarrow{P} = (\frac{\partial}{\partial x_1}, \frac{\partial}{\partial x_2}, \frac{\partial}{\partial x_3}) \cdot
-    \begin{pmatrix}
+  & \nabla \cdot \overleftrightarrow{P} = \begin{pmatrix}
+      \frac{\partial}{\partial x_1} & \frac{\partial}{\partial x_2} & \frac{\partial}{\partial x_3}
+    \end{pmatrix} \cdot \begin{pmatrix}
       -p &0 &0 \\
       0 &-p &0 \\
       0 &0 &-p
-    \end{pmatrix} = (-\frac{\partial p}{\partial x_1}, -\frac{\partial p}{\partial x_2}, -\frac{\partial p}{\partial x_3}) = \underbrace{-\nabla p}_{градиент}\\
+    \end{pmatrix} = \begin{pmatrix}
+      -\frac{\partial p}{\partial x_1} & -\frac{\partial p}{\partial x_2} & -\frac{\partial p}{\partial x_3}
+    \end{pmatrix} = \underbrace{-\nabla p}_{\text{градиент}}\\
   &\nabla \cdot \overleftrightarrow{P}= - \nabla P \\
   &\frac 1\rho \nabla p = \vec{f} \text{ --- Уравнение Эйлера равновесия текучей среды}
 \end{align*}
@@ -106,7 +113,7 @@ p_n = p_{11} = p_{22} = p_{33} = \underbrace{-P}_{Давление}
 
 \begin{align*}
   &p V = \frac{R}{\mu} M T \\
-  &p d V = \frac{R}{\mu} dm T\\
+  &p \,dV = \frac{R}{\mu} \,dm\, T\\
   &p = \frac{R}{\mu} \rho T \\
   &\rho  = \frac{p \mu}{RT}
 \end{align*}

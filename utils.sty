@@ -1,10 +1,10 @@
 \ProvidesPackage{utils}[2015/10/13 v0.1 Helper macros]
 
 \theoremstyle{definition}
-\newtheorem*{defn}{Definition} 
-\newtheorem*{note}{Note}
-\newtheorem{ex}{Example}[section]
-\newtheorem{stm}{Statement}[section]
+\newtheorem*{defn}{Определение}
+\newtheorem*{note}{Замечание}
+\newtheorem{ex}{Пример}[section]
+\newtheorem{stm}{Утверждение}[section]
 
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}%
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}%
@@ -37,11 +37,13 @@
   {\newline}% Space after thm head: \newline = linebreak
   {}%         Thm head spec
 \theoremstyle{break}
-\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{thm}{Теорема}[chapter]
 
 \theoremstyle{plain}
-\newtheorem{cor}{Corollary}[thm]
-\newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Следствие}[thm]
+\newtheorem{lemma}{Лемма}
+
+\renewcommand{\proofname}{Доказательство}
 
 \renewcommand\qedsymbol{$\blacksquare$}
 \renewcommand\le{\leqslant}
