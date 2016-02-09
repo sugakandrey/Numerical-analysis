@@ -1,0 +1,30 @@
+\documentclass[12pt, a4paper, fleqn, draft]{report}
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{braket}
+\usepackage{xfrac}
+\usepackage[left=2.5cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{mathrsfs}
+\usepackage{faktor}
+\usepackage{pgfplots}
+\usepackage[pdftitle={Functional analysis}]{hyperref} % some cool PDF features (disabled for draft anyway)
+\hypersetup{final} % enable hyperref even for draft
+\usepackage{utils}
+\pgfplotsset{compat=1.12}
+
+\author{Sugak A.M.}
+\title{Numerical analysis.}
+\date{Spring 2016}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\chapter{Равновесие текучей среды}
+\include{fluideq}
+\include{heavyeq}
+\end{document}

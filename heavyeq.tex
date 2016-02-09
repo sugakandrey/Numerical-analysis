@@ -1,0 +1,61 @@
+\section{Уравнение равновесия в тяжелой среде}
+\begin{align*}
+  &\frac{1}{\rho(p)} \nabla p = \vec{f} \\
+  &\nabla [\frac{1}{\rho(p)} \nabla p] = \nabla \cdot \vec{f}= -\nabla^2 \Pi \\
+  &\vec{f} = -\nabla \Pi
+\end{align*}
+
+\begin{align*}
+  &\nabla^2 \phi = - \epsilon_0 q\\
+  &\vec{f}_{1, 2} = \frac{1}{4 \pi \epsilon_0} \frac{q_1 q_2 \vec{r}}{r^2 r} \\
+  &\vec{f}_{1, 2} = -\gamma \frac{m_1 m_2}{r^2} \frac{\vec{r}}{r} \\
+  &\nabla^2 \Pi = 4 \pi \gamma \rho \\
+  &\nabla \cdot [ \frac{1}{\rho(p)} \nabla p] = -4 \pi \gamma \rho(p)
+\end{align*}
+
+Несжимаемая среда:
+\[
+  \rho = \rho_0 = const(p) 
+\]
+
+\begin{defn}
+  $\nabla^2 p = - 4 \pi \gamma \rho_0^2$ --- Уравнение Пуассона
+\end{defn}
+
+\begin{thm}[Обобщенная теорема Гаусса]
+  \begin{align*}
+    &\int_W \nabla \otimes \ten{T} dw = \oint_S \vec{n} \otimes \ten{T} dS \\
+    &\nabla \otimes T = \lim_{\delta w \to 0} \frac{1}{\delta w} \int_{\delta w} (\nabla \otimes \ten{T}) dw = \lim_{\delta w \to 0} \frac{1}{\delta w} \oint_{\delta S} \vec{n} \otimes \ten{T} d S\\
+    & \nabla \cdot \vec{f} = \lim_{\delta w \to 0} \frac{1}{\delta w} \oint_{\delta S} \vec{n} \cdot \vec{f} d S\\
+    &\nabla \cdot \vec{f} = \lim_{\delta \to 0} \frac{1}{\frac 43 \pi \delta^3} \oint_S -\gamma \frac{\rho \frac 43 \pi \delta^3}{\delta^2} \delta^2 dw = -\gamma \rho 4 \pi = -4 \pi \gamma \rho \\
+    &\vec{f} = -\nabla \Pi \\
+    &-\nabla^2 \Pi = - 4\Pi \gamma \rho\\
+    &\nabla^2 \Pi = 4 \pi \gamma \rho\\
+    &\nabla^2 \phi = -\epsilon_0 q
+  \end{align*}
+\end{thm}
+
+*pic3*
+\[
+  \vec{F}_c = -mw^2 \vec{r}
+\]
+
+
+\begin{align*}
+  &\vec{f}_g = \vec{g} = -g \vec{e}_z \\
+  &\vec{f}_0 = w^2 \vec{r} = w^2 r \vec{e}_r \\
+  &\vec{f} = \vec{f}_g + \vec{f}_0 = -g\vec{e}_z + w^2 r \vec{e}_r \iff \vec{f} = -\nabla \Pi \\
+  &\Pi = gz - \frac{w^2r^2}{2} + C\\
+  &\P = \int_{p_0}^p \frac{dp}{\rho(p)} = \int_{p_0}^p  \frac{dp}{\rho_0} = \frac{p - p_0)}{\rho_0}\\
+  &gz - \frac{w^2r^2}{2} + C + \frac{p - p_0}{\rho_0} = const \\
+  &gz - \frac{w^2r^2}{2} + \frac{p}{\rho_0} = const
+\end{align*}
+
+Поверхность $p = p_A$
+\begin{align*}
+  &gz - \frac{w^2r^2}{2} + \frac{p_A}{\rho_0} = const \\
+  &gz - \frac{w^2r^2}{2} = const \\
+  &z(r) = \frac{w^2r^2}{2g} + C\\
+  &V = \pi R^2 H \\
+  &\int_0^R 2 \pi r z(r) dr
+\end{align*}
