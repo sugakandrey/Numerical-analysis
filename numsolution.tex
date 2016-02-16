@@ -1,0 +1,50 @@
+\section{Численное решение систем линейных алгебраических уравнений}
+\[
+\begin{cases}
+  a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n = b_1 \\
+  a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n = b_2 \\
+  \dots
+  a_{n1}x_1 + a_{n2}x_2 + \dots + a_{nn}x_n = b_n
+\end{cases}
+\]
+\begin{align*}
+  &A\vec{x} = \vec{b} \\
+  &A =
+    \begin{pmatrix}
+      a_{11} &\dots &a_{1n}\\
+      \vdots &     &\vdots \\
+      a_{n1} &      &\a_{nn}
+    \end{pmatrix} \\
+  &\vec{b} =
+  \begin{pmatrix}
+    b_1 \\
+    \vdots\\
+    b_n
+  \end{pmatrix} \\
+  &\|\vec{x}\|_1 = \sum_{i = 1}^n |x_i| \\
+  &\|\vec{x}\|_2 = \|\vec{x}\|_E = (\sum_{i = 1}^n |x_i|^2)^{\frac{1}{2}} \\
+  &\|\vec{x}||_p = (\sum_{i = 1}^n |x_i|^p)^{\frac 1p} \\
+  &\|\vec{x}||_\infty= \lim_{p to \infty} \|\vec{x}\|_p = \\
+\end{align*}
+
+\begin{align*}
+ &\|A\| = \max_{\vec{x} \neq 0} \frac{\|A \vec{a}\|}{\|\vec{x}\|} \\
+ &\|A\|_1 = \max_{1 \leq j \leq n} \sum_{i = 1}^n |a_{ij}| \\
+ &\|A\|_1 = \max_{1 \leq i \leq n} \sqrt{\lambda_i (A^T A)} \\ 
+ &\|A\|_2 \leq \|A\|_E = (\sum_{i,j = 1}^n |a_{ij}|^2)^{\frac 12} \\
+ &\|A\|_\infty  = \max_{1 \leq i \leq n} \sum_{j = 1}^n |a_{ij}|
+\end{align*}
+
+\begin{defn}
+  $(A\vec{x}, \vec{x}) = \sum\limits_{i, j = 1}^n a_{ij}x_ix_j \geq 0\ \forall
+  \vec{x}$ \\
+  $A$ --- \textbf{Положительно опр-я матрица}
+\end{defn}
+
+\begin{defn}
+  $(A\vec{x}, \vec{y}) = (\vec{x}, A\vec{y}) \iff a_{ij} = a_{ji},\ A^T = A$
+\end{defn}
+
+\[
+  \lambda_{min} \|\vec{x}\|^2 \leq (A\vec{x}, \vec{x}) \leq \lambda_{max} \|\vec{x}\|^2
+\]

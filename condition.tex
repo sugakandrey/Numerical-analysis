@@ -1,0 +1,82 @@
+\section{Обусловленность СЛАУ}
+\begin{align*}
+  &\vec{x} =
+    \begin{pmatrix}
+      x_1 \\
+      \vdots \\
+      x_n
+    \end{pmatrix},\ 
+  \vec{x}^* =
+  \begin{pmatrix}
+    x_1^*\\
+    \vdots\\
+    x_n^*
+  \end{pmatrix} \\
+  &\triangle(\vec{x}^*) = \|\vec{x}^* - \vec{x}\| \\
+  &\delta(\vec{x}^*) = \frac{\triangle{\vec{x}^*}}{\|vec{x}\|} = \frac{\|\vec{x}^* - \vec{x}\|}{\|\vec{x}\|} \approx \frac{\|\vec{x}^* - \vec{x}}{\|\vec{x}^*} 
+  &\triangle{A^*} = \|A^* - A\|
+\end{align*}
+
+\begin{align*}
+  &A \vec{x} = \vec{b} \\
+  &A \vec{x}* = \vec{b}^*\\
+  &A(\vec{x}^* - \vec{x}) = \vec{b}^* - \vec{b} \\
+  &\vec{x}^* - \vec{x} = A^{-1}(\vec{b}^* - \vec{b}) \\
+  &\|\vec{x}^* - \vec{x}\| = \|A^{-1}(\vec{b}^* - \vec{b}) \leq \|A^{-1}\| \|\vec{b}^* - \vec{b}\| \\
+  &\trinalge(\vec{x}^*) \leq \|\vec{A^{-1}}\| \triangle(\vec{b}^*)
+  &\|\vec{x}\| \delta(\vec{x}^*) \leq \|A^{-1}\| \|\vec{b}\| \delta(\vec{b}^*) \\
+  &\delta(\vec{x}^*) \leq \|A^{-1}\| \frac{\|vec{b}\|}{\|vec{x}} \delta(\vec{b}^*) = \|A^{-1}\| \frac{\|A\vec{x}\|}{\|vec{x}\|} \delta(\vec{b}^*) \leq \|A^{-1}\| \|A\| \delta(\vec{b}^*) = \overline{\delta(\vec{x}^*)} \\
+  &\overline{\nu_\delta} = \frac{\overline{\delta} (\vec{x}^*)}{\delta(\vec{b}^*)} = \|A^{-1}\| \|A\| \\
+  &\cond{A} = \|A^{-1}\| \|A\| \text{ --- стандартное число обусловленности.}
+\end{align*}
+
+\begin{align*}
+  &A\vec{x} = \vec{b} \\
+  &A^*\vec{x}^* = \vec{b}^*\\
+  &A^*\vec{x}^* - A\vec{x} = \vec{b}^* - \vec{b} \\
+  &[A + (A^* - A)][\vec{x} + (\vec{x}^* - \vec{x})] - A\vec{x} =\vec{b}^* - \vec{b} \\
+  &A \vec{x} + A (\vec{x}^* - \vec{x}) (A^* - A)\vec{x} + (A^* - A)(\vec{x}^* - \vec{x}) - A\vec{x} = \vec{b}^* - \vec{b} \\
+  &A(\vec{x}^* - \vec{x}) = (\vec{b}^* - \vec{b}) - (A^* - A)\vec{x} \\
+  &\vec{x}^* - \vec{x} = A^{-1}(\vec{b}^* - \vec{b}) - A^{-1}(A^* - A)\vec{x} \\
+  &\|\vec{x}^* - \vec{x}\| \leq \|A^{-1}\| \|vec{b}^* - \vec{b}\| + \|A^{-1}\| \|A^* - A\|\|\vec{x}\| \\
+  &\|\delta(\vec{x})\| \geq \|A^{-1}\| \frac{\|\vec{b}\|}{\|\vec{x}\|} \delta(\vec{b}^*) +\|A^{-1}\| \|A\| \delta(A^*) \\
+  &\frac{\|A\vec{x}\|}{\|\vec{x}\|} \leq \|A\| \\
+  &\delta(\vec{x}^*) \leq \|A^{-1}\| \|A\| (\delta(\vec{b}^*) + \delta(A^*)) = \overline{\delta}(\vec{x}^*) \\
+  &\overline{\nu}_\delta = \frac{\overline{\delta}(\vec{x}^*)}{\delta(\vec{b}^*) + \delta(A^*)} = \|A^{-1}\| \|A\| = \cond{A}
+\end{align*}
+
+\begin{note}
+  \[
+    \cond{E} = \|E^{-1}\| \|E\| = \|E\|^2 = 1
+  \]
+\end{note}
+
+\begin{note}
+  \begin{align*}
+    &\cond{A} = \|A^{-1}\| \|A\| \\
+    &E = A^{-1} A\\
+    &\underbrace{\|E\|}_1 = \|A^{-1} A\| \leq \|A^{-1}\| \|A\| = \cond{A} \\
+    &\cond{A} \geq 1
+  \end{align*}
+\end{note}
+
+\begin{note}
+  \begin{align*}
+    \cond{\alpha A} &= \|(\alpha A)^{-1}\| \|\alpha A\| = \|\frac 1\alpha A^{-1}\| \|\alpha A\| = \\
+                    &=\abs{\frac 1\alpha} \|A^{-1}\| \abs{\alpha} \|A\| = \|A^{-1}\| \|A\| = \cond{A}
+  \end{align*}
+\end{note}
+
+\begin{defn}
+  Прямые методы - методы, в которых решение получается за конечно число шагов,
+  и если ве операции выполняются точно, то и решение точно.
+\end{defn}
+
+\begin{defn}
+  Итерационные методы - заведомо приближенные.
+  \[
+    \vec{x}^1, \vec{x}^2, \dotsc, \vec{x}^n \xrigtharrow{n \to \infty} \overline{\vec{x}}
+  \]
+\end{defn}
+
+
