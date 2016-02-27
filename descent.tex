@@ -39,3 +39,17 @@ $A$ --- симметричная, положительно определенн�
   \sum_{i = 1}^n \frac{\partial F}{\partial x_i} |_{\vec{x}^0} P_i < 0\\
   \nabla F |_{\vec{x}^0} \cdot \vec{p}^0 < 0
 \end{gather*}
+Выбор шага: $F(\vec x^0 + \alpha^0 \vec p^0) = \min\limits_\alpha F(\vec x^0 + \alpha p^0)$
+
+\begin{gather*}
+F(x^0 + \alpha \vec p^0) = \frac12 \left[ \text{хз что тут было}\right] \\
+  = \frac12 (A\vec x^0, \vec x^0) + \frac{\vec\alpha}{2} (A \vec p^0, \vec x^0) +
+  \frac{\alpha^2}2(A\vec x^0, \vec p^0) - (\vec b, \vec x^0) - \alpha(\vec b, \vec p^0) = \\
+  = \frac{\alpha^2}{2} (A \vec p^0, \vec p^0) + \alpha (A \vec x^0, \vec p^0) -
+  \alpha(\vec b, \vec p^0) + \frac12 (A\vec x^0, \vec x^0) - (\vec b, \vec x^0) \\
+  = \frac{\alpha^2}{2} (A \vec p^0, \vec p^0) + \alpha (A \vec x^0, p^0) + \frac12(A\vec x^0, \vec x^0) - (\vec b, \vec x^0)
+\end{gather*}
+\begin{align*}
+  \frac{dF(x^0 + \alpha {\vec p}^0}{d\alpha} = 0, \quad \alpha(A\vec p^0, \vec p^0) + (A \vec x^0 - \vec b, \vec p^0) = 0 \\
+                      \alpha = \alpha^0 = -\frac{(A \vec x^0 - \vec b, \vec p^0)}{(A\vec p^0, \vec p^0)} = -\frac{(\vec g^0, \vec p^0)}{(A\vec p^0, \vec p^0)}
+\end{align*}
