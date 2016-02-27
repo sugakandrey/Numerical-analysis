@@ -1,0 +1,108 @@
+\section{Метод простых итераций. Метод Якоби.}
+
+\begin{align*}
+  A \vec{x} = \vec{b} \iff &\vec{x} = B\vec{x} + \vec{c}\\
+                           &\vec{x}^0\\
+                           &\vec{x}^1 = B\vec{x}^0 + \vec{c} \\
+                           &\dots\\
+                           &\vec{x}^{k + 1}= B\vec{x}^k + \vec{c}\\
+                           &\dots\\
+                           &\vec{x}^k \xrightarrow{k \to \infty} \overline{\vec{x}}\\
+                           &\lim_{k \to \infty} \|\vec{x}^k - \overline{\vec{x}}\| = 0
+\end{align*}
+
+
+\begin{gather*}
+  \begin{cases}
+    a_{11} x_1 + a_{12} x_2 + \cdots + a_{1n} x_n = b_1\\
+    a_{21} x_1 + a_{22} x_2 + \cdots + a_{2n} x_n = b_2 \\
+    \vdots \\
+    a_{n1} x_1 + a_{2n} x_2 + \cdots + a_{nn} x_n = b_n
+  \end{cases} 
+
+  \begin{cases}
+    x_1 = 0 - \frac{a_{12}}{a_{11}} x_2 - \cdots - \frac{a_{1n}}{a_{11}} x_n +
+    \frac{b_1}{a_{11}} \\
+    x_2 = \frac{a_{21}}{a_{22}} x_1 + 0 - \cdots - \frac{a_{2n}}{a_{22}} x_n +
+    \frac{b_2}{a_{22}}\\
+    \dots
+  \end{cases}
+
+\end{gather*}
+
+
+\begin{gather*}
+  \vec{x} = \vec{x} - \alpha(A\vec{x} - \vec{b}) = (E - \alpha A) vec{x} +
+  \alpha \vec{b}\\
+  \frac{d\vec{x}}{dt} = - \beta (A \vec{x} - \vec{b})\\
+  \vec{x} = \vec{x}(t) = \begin{pmatrix}
+    x_1(t)\\
+    x_2(t)\\
+    \dots\\
+    x_n(t)
+  \end{pmatrix} \\
+  \lim_{t \to 0} \vec{x}(t) \implies A\vec{x} = \vec{b} \\
+  \frac{\vec{x}^{n + 1} - \vec{x}^n}{\triangle t} \approx - \beta (Ax^n -
+  \vec{b}) \\
+  \vec{x}^{n + 1} = x^n - \underbrace{(\beta \triangle t)}_{\alpha} (A\vec{x}^n
+  - \vec{b}) \\
+  \vec{x}^{n + 1} = \vec{x}^n - \alpha (A \vec{x}^n - \vec{b}) = \underbrace{(E
+    - \alpha A)}_{B} \vec{x}^n + \underbrace{\alpha \vec{b}}_{\vec{c}}
+\end{gather*}
+
+\begin{note}[Достаточное условие сходимости метода]
+  \begin{align*}
+    A \vec{x} = \vec{b} \iff &\vec{x} = B\vec{x} + \vec{c}\\
+                             &\vec{x}^{n + 1} = B\vec{x}^n + \vec{c}\\
+                             &\|B\| < 1 \implies \|\vec{x}^n - \overline{\vec{x}}\| \xrightarrow{n \to \infty} 0
+  \end{align*}
+\end{note}
+
+\begin{proof}
+  \begin{gather*}
+    \overline{\vec{x}} = B \vec{x}+ \vec{c}\\
+    \vec{x}^n = B \vec{x}^{n - 1} + c\\
+    \vec{x}^n - \overline{\vec{x}} = B (\vec{x}^{n - 1} -\overline{\vec{x}}) \\
+    \|\vec{x}^n - \overline{\vec{x}}\| = \|B(\vec{x}^{n - 1}
+    -\overline{\vec{x}})\| \leq \|B\|\|\vec{x}^{n - 1} - \overline{\vec{x}}\|
+    \leq \|B\|^2 \|\vec{x}^{n - 2} - \overline{\vec{x}}\| \leq \dots
+  \end{gather*}
+\end{proof}
+
+\begin{note}[Апостариорная оценка]
+  \begin{gather*}
+    \vec{x}^n - \overline{\vec{x}} = B (\vec{x}^{n - 1} - \vec{x}^n + \vec{x}^n
+    - \overline{\vec{x}}) = B(\vec{x}^{n - 1} - \vec{x}^n) + B(\vec{x}^n -
+    \overline{\vec{x}}) \\
+    \|\vec{x}^n - \vec{x}\| \leq \|B\| \|\vec{x}^{n - 1} - \vec{x}^n\| + \|B\|
+    \|\vec{x}^n - \overline{\vec{x}}\| \\
+    (1 - \|B\|) \|\vec{x}^n - \vec{x}\| \leq \|B\| \| \vec{x}^{n -1} -
+    \vec{x}^n\| \\
+    \|\vec{x}^n - \overline{\vec{x}}\| \leq \frac{\|B\|}{1 - \|B\|} \|vec{x}^{n
+      - 1} - \vec{x}^n\| \leq \epsilon \\
+    \|\vec{x}^n - \vec{x}^{n - 1}\| \leq \epsilon \frac{1 - \|B\|}{\|B\|}
+  \end{gather*}
+\end{note}
+
+\begin{gather*}
+  \|\vec{x}\|_\infty = \max_{1 \leq i \leq n} |x_i|,\ \|A\|_\infty = \max_{1
+    \leq i \leq n} \sum_{j = 1}^n |a_{ij}| \\
+  \|B\|_\infty < 1, \max_{1 \leq i \leq n} \sum_{j = 1}^n |b_{ij}| < 1,\ \sum_{j
+    = 1}^n |b_{ij}| < 1 \\
+  b_{ij} = - \frac{a_{ij}}{a_{ii}},\ b_{ii} = 0 \\
+  \sum_{j = 1, j \neq i}^n |a_{ij}| < |a_{ii}| \text{ --- Условие диагонального преобладания}
+\end{gather*}
+
+\begin{gather*}
+  \vec{x}^{k + 1} = \vec{x}^k - \alpha(A \vec{x}^k - \vec{b}) = (E - \alpha A)
+  \vec{x}^k + \alpha \vec{b}\\
+  \|\vec{x}\|_2,\ \|A\|_2,\ A \text{ --- симметричная положительно
+    определенная}\\
+  \text{Занумеруем собственные числа в порядке возрастания} \\
+  0 < \lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n \\
+  0 < \alpha < \frac{2}{\lambda_{\text{max}}} \implies \|B\|_2 < 1 \\
+  \alpha_{\text{opt}} = \frac{2}{\lambda_{min} + \lambda_{max}} \implies \|B\| =
+  min = \frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} + \lambda_{min}} \\
+  \lambda_{max} \approx \lambda_{min} \implies \|B\|_2 \approx 0 \\
+  \lambda_{min} \approx 0 \implies \|B\|_2 \approx 1
+\end{gather*}

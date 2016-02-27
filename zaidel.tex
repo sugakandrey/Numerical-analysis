@@ -1,0 +1,46 @@
+\section{Метод Зайделя}
+\[ 
+  \vec{x}^{k + 1} = B \vec{x}^k + \vec{c} \\
+\]  
+
+\begin{gather*}
+  \begin{cases}
+    x_!^{k + 1} = 0 + b_{12} x_2^^k +b_{13}x_3^k + \cdots + b_{1n}x_n^k  + c_1 \\
+    x_2^{k + 1} = b_{21} \underbrace{x_1^k}_{x_1^{k + 1}} + 0 + b_{23}x_3^k + \cdots + b_{2n}x_n^k + c_2 \\
+    \dots\\
+    x_n^{k + 1} = b_{n1} \underbrace{x_1^k}_{x_1^{k + 1}} + b_{n2} \\
+    \underbrace{x_2^k}_{x_2^{k + 1}} + b_{n3} \underbrace{x_3^k}_{x_3^{k + 1}} + \cdots + 0 + c_n
+  \end{cases}
+\end{gather*}
+
+\begin{note}[Достаточное условие сходимости]
+  \[
+    \|B_1\| + \|B_2\| < 1 \implies \|\vec{x}^k -\overline{\vec{x}}\| \leq q^k
+    \|\vec{x}^0 - \overline{\vec{x}}\|,\ q = \frac{\|B_2\|}{1 - \|B_1\|} < 1
+  \]
+\end{note}
+
+\begin{note}[Апостариорная оценка сходимости]
+  \begin{gather*}
+    \|\vec{x}^k - \overline{\vec{x}}\| \leq \frac{\|B_2\|}{1 - \|B\|}\|\vec{x}^k
+    - \vec{x}^{k - 1}\| \leq \epsilon \\
+    \|\vec{x}^k - \vec{x}^{k - 1}\| \leq \frac{1 - \|B\|}{\|B_2\|} \epsilon 
+  \end{gather*}
+\end{note}
+
+\begin{stm}
+  Если $A$ --- симметричная, положительно определнная матрица, то метод сходится всегда.
+\end{stm}
+
+\section{Метод последовательной релаксации}
+
+\begin{align*}
+  \vec{x}^k \to &\tilde{\vec{x}^{k + 1}} = B_1 \tilde{\vec{x}^{k = 1}} + B_2\vec{x}^k + \vec{c}\\
+                &\vec{x}^{k + 1}  = w \tilde{\vec{x}^{k + 1}} + (1 - w)\vec{x}^k = \vec{x}^k + \underbrace{w}_{\text{релаксационный множитель}, 0 < w < 2} \underbrace{(\tilde{\vec{x}^{k + 1}} - \vec{x}^k)}_{\triangle \vec{x}^{k + 1}}
+\end{align*}
+
+\begin{note}
+  $0 < w < 1$ --- нижняя релаксация (замедляет сходимость, если она есть, но
+  может ее дать, в случае, когда ее нет), $1 < w < 2$ --- верхняя релаксация
+  (ускоряет сходимость, но может привести к ее потере).
+\end{note}

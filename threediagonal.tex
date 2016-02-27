@@ -1,0 +1,59 @@
+\section{Решение систем алгебраических уравнений с трехдиагональной матрицей. Метод прогонки}
+
+\begin{gather*}
+  b_1 x_1 + c_1 x_2  = d_1\\
+  a_2 x_1 + b_2 x_2 + c_2 x_3 = d_2 \\
+  \dots \\
+  a_i x_{i - 1} + b_i x_i + c_i x_{i + 1} = d_i \\
+  \dots \\
+  a_{n - 1} x_{n - 2} + b_{n - 1} x_{n - 1} + c_{n - 1} x_n = d_{n - 1}
+  a_n x_{n - 1}+ b_n x_n = d_n
+\end{gather*}
+
+\[
+  A =
+  \begin{pmatrix}
+    b_1 &c_1 &\cdots\\
+    a_2 &b_2 &c_2 &\dots\\
+    &a_i &b_i &c_i \dots\\
+    &\cdots &\\
+    \dots &a_{n - 1} &b_{n - 1} &c_{n - 1}\\
+    \dots &a_n &b_n
+  \end{pmatrix}
+\]
+
+\begin{gather*}
+  x_1 = \underbrace{-\frac{c_1}{b_1}}_{\alpha_1} x_2 +
+  \underbrace{\frac{d_1}{b_1}}_{\beta_1} \\
+  a_2(\alpha_1 x_2 + \beta_1) + \beta_2 x_2 + c_2 x_3 = d_2 \\
+  (a_2 \alpha_1 + b_2) x_2 + c_2 x_3 = d_2 - a_2 \beta_1 \\
+  x_2 = \underbrace{\frac{c_2}{a_2\alpha_1 + b_2}}_{\alpha_2} + \underbrace{\frac{d_2 - a_2 \beta_1} {a_2 \alpha_1 +
+    b_2}}_{\beta_2} = \alpha_2 + x_3 + \beta_2 \\
+  \vdots\\
+  \begin{cases}
+    x_i = \alpha_i x_{i + 1} + \beta_i\\
+    \alpha_i = - \frac{c_i}{a_i \alpha_{i - 1} + b_i} \\
+    \beta_i = \frac{d_i - a_i \beta_{i - 1}}{a_i \alpha_{i - 1} b_i}
+  \end{cases}
+\end{gather*}
+
+Сначала прямым проходом находим коэффициенты $\alpha$ и $\beta$, потом обратным
+проходом находим неизвестные $x_n, x_{n - 1}, \dotsc$. 
+
+\[
+  N \sim 6n
+\]
+
+\begin{note}
+  \[
+    \frac{\|\vec{x}^* - \overline{\vec{x}}\|}{\|\vec{x}\|} \leq \epsilon
+  \]
+  Если данное условие не выполняется, это называется накоплением ошибки.
+\end{note}
+
+\begin{note}
+  \[
+    |b_k| \geq |a_k| + |c_k|
+  \] 
+  Достаточное условие ненакопления ошибки.
+\end{note}

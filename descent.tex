@@ -1,0 +1,41 @@
+\section{Понятия о методах спуска}
+
+\[  
+  A \overline{\vec{x}} = b \iff F(\overline{\vec{x}}) = \min_{\vec{x}}
+  F(\vec{x})
+\]
+
+$A$ --- симметричная, положительно определенная.
+
+\begin{align*}
+  F(x) &= \frac 12 \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} x_i x_j - sum_{i = 1}^n b_i x_i =\\ 
+       &= \frac 12 (A\vec{x}, \vec{x}) - (\vec{b}, \vec{x})
+\end{align*}
+
+Для положительно определенной квадратичной формы необходимое условие минимумма
+будет и достаточным.
+\[
+  \frac{\partial F}{\partial x_k} = 0,\ k = 1, \dotsc, n
+\]
+
+\begin{gather*}
+  \frac{\partial F}{\partial x_k} = \frac 12 \sum_{j = 1}^n a_{kj}x_j + \frac 12
+  \sum_{i = 1}^n a_{ki}x_i - b_k = 0,\ k = 1,\dotsc, n \\
+  \sum_{j = 1}^n a_{kj} x_j - b_k = 0,\ \sum_{j = 1}^n a_{kj}x_j = b_k,\ k = 1,
+  \dotsc, n
+\end{gather*}
+
+\begin{align*}
+  \vec{x}^0, \vec{p}^0: &F(\vec{x}^0 + \alpha \vec{p}^0) \underset{<}{\alpha \to
+                          0} F(\vec{x}^0)\\
+                        &F(\vec{x}^0 + \alpha^0 \vec{p}^0) < F(\vec{x}^0)
+                        &\vec{x}^1 = \vec{x}^0 + \alpha_0 \vec{p}^0
+\end{align*}
+
+\subsection{Направления спуска}
+\begin{gather*}
+  \frac{F(\vec{x}^0 + \alpha \vec{p}^0) - F(x^0)}{\frac{d}{d\alpha} F(\vec{x}^0
+    + \alpha \vec{p}^0)} \underset{<}{\alpha \to 0} 0 \\
+  \sum_{i = 1}^n \frac{\partial F}{\partial x_i} |_{\vec{x}^0} P_i < 0\\
+  \nabla F |_{\vec{x}^0} \cdot \vec{p}^0 < 0
+\end{gather*}
