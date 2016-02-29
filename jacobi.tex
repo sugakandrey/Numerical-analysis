@@ -30,7 +30,7 @@
 
 
 \begin{gather*}
-  \vec{x} = \vec{x} - \alpha(A\vec{x} - \vec{b}) = (E - \alpha A) vec{x} +
+  \vec{x} = \vec{x} - \alpha(A\vec{x} - \vec{b}) = (E - \alpha A) \vec{x} +
   \alpha \vec{b}\\
   \frac{d\vec{x}}{dt} = - \beta (A \vec{x} - \vec{b})\\
   \vec{x} = \vec{x}(t) = \begin{pmatrix}
@@ -63,7 +63,7 @@
     \vec{x}^n - \overline{\vec{x}} = B (\vec{x}^{n - 1} -\overline{\vec{x}}) \\
     \|\vec{x}^n - \overline{\vec{x}}\| = \|B(\vec{x}^{n - 1}
     -\overline{\vec{x}})\| \leq \|B\|\|\vec{x}^{n - 1} - \overline{\vec{x}}\|
-    \leq \|B\|^2 \|\vec{x}^{n - 2} - \overline{\vec{x}}\| \leq \dots
+    \leq \|B\|^2 \|\vec{x}^{n - 2} - \overline{\vec{x}}\| \leq \dots \qedhere
   \end{gather*}
 \end{proof}
 
@@ -76,7 +76,7 @@
     \|\vec{x}^n - \overline{\vec{x}}\| \\
     (1 - \|B\|) \|\vec{x}^n - \vec{x}\| \leq \|B\| \| \vec{x}^{n -1} -
     \vec{x}^n\| \\
-    \|\vec{x}^n - \overline{\vec{x}}\| \leq \frac{\|B\|}{1 - \|B\|} \|vec{x}^{n
+    \|\vec{x}^n - \overline{\vec{x}}\| \leq \frac{\|B\|}{1 - \|B\|} \|\vec{x}^{n
       - 1} - \vec{x}^n\| \leq \epsilon \\
     \|\vec{x}^n - \vec{x}^{n - 1}\| \leq \epsilon \frac{1 - \|B\|}{\|B\|}
   \end{gather*}
@@ -100,7 +100,7 @@
   0 < \lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n \\
   0 < \alpha < \frac{2}{\lambda_{\text{max}}} \implies \|B\|_2 < 1 \\
   \alpha_{\text{opt}} = \frac{2}{\lambda_{min} + \lambda_{max}} \implies \|B\| =
-  min = \frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} + \lambda_{min}} \\
+  \min = \frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} + \lambda_{min}} \\
   \lambda_{max} \approx \lambda_{min} \implies \|B\|_2 \approx 0 \\
   \lambda_{min} \approx 0 \implies \|B\|_2 \approx 1
 \end{gather*}
