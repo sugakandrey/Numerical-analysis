@@ -1,21 +1,20 @@
-\section{Обзоор метода Гаусса}
+\section{Обзор метода Гаусса}
 \[
 \begin{cases}
   a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1 \\
   a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2 \\
-  \dots
+  \dots                                        \\
   a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n = b_n
 \end{cases}
 \]
 
-\begin{align*}
-  &a_{nn}^{(n - 1)} \cdot x_n = b_n^{(n - 1)} \\
-  &x_n = \frac{b_n^{(n - 1)}}{a_{nn}^{(n - 1)}}
-\end{align*}
+\begin{gather*}
+  a_{nn}^{(n - 1)} \cdot x_n = b_n^{(n - 1)} \\
+  x_n = \frac{b_n^{(n - 1)}}{a_{nn}^{(n - 1)}}
+\end{gather*}
 
 \begin{note}
-  Процедура выбора ведущего элемента позволяет избежать накопления ошибки в
-  методе Гаусса. \\
+  Процедура выбора ведущего элемента позволяет избежать накопления ошибки в методе Гаусса.
   \begin{enumerate}
   \item Выбор ведущего элемента по столбцу
   \item Выбор ведущего элемента по всей матрице
@@ -36,9 +35,9 @@
 \]
 
 \begin{note}[Альтернатива Фредгольма]
-  \begin{align*}
-    &Rank(A) = Rank(A, \vec{b}) \implies \text{решений бесконечно много} \\
-    &Rank(A \neq Rank(A, \vec{b}) \implies \text{решений не существует}
-  \end{align*}
+  \begin{gather*}
+    Rank(A) = Rank(A, \vec{b}) \implies \text{решений бесконечно много} \\
+    Rank(A) \neq Rank(A, \vec{b}) \implies \text{решений не существует}
+  \end{gather*}
 \end{note}
 
