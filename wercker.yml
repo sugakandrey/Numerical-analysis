@@ -25,7 +25,13 @@ build:
         code: |
           rubber --pdf -Wall numerical.tex
 deploy:
-  steps:
-    - script:
-        name: nothing
-        code: echo mda deploy
+    steps:
+        - github-create-release:
+            token: $GH_TOKEN
+            tag: test_release
+            title: Test release
+            draft: true
+        - github-upload-asset:
+            token: $GH_TOKEN
+            file: numerical.pdf
+            filename: numerical.pdf
