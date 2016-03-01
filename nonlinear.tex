@@ -20,10 +20,10 @@
 \subsection{Метод простых итераций}
 \begin{gather*}
   \vec{f}(\vec{x}) = 0 \iff \vec{x} = \vec{\phi}(\vec{x}) \\
-  \vec{x}^0. \vec{x}^1 = \vec{\phi}(\vec{x}^0),\dotsc, \vec{x}^{k + 1} =
+  \vec{x}^0, \vec{x}^1 = \vec{\phi}(\vec{x}^0),\dotsc, \vec{x}^{k + 1} =
   \vec{\phi}(\vec{x}^k) \\
   \begin{cases}
-    x_1^{k + 1} = \phi_1(z_1^k, \dotsc, x_n^k) \\
+    x_1^{k + 1} = \phi_1(x_1^k, \dotsc, x_n^k) \\
     \vdots\\
     x_n^{k + 1} = \phi_n(x_1^k, \dotsc, x_n^k)
   \end{cases}
