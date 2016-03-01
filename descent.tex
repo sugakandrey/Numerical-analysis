@@ -39,3 +39,55 @@ $A$ --- симметричная, положительно определенн�
   \sum_{i = 1}^n \frac{\partial F}{\partial x_i} |_{\vec{x}^0} P_i < 0\\
   \nabla F |_{\vec{x}^0} \cdot \vec{p}^0 < 0
 \end{gather*}
+
+\subsection{Покоординатный спуск}
+\begin{gather*}
+  \vec{x}_k =
+  \begin{pmatrix}
+    x_1^k\\
+    x_2^k\\
+    \vdots\\
+    x_n^k
+  \end{pmatrix} \\
+  \min_{x_1} F(x_1, x_2^k, x_3^k, \dotsc, x_n^k) = F(x_1^{k + 1}, x_2^k,
+  \dotsc, x_n^k) \\
+  \min_{x_2} F(x_1^{k + 1}, x_2, x_3^k, \dotsc, x_n^k) = F(x_1^{k + 1}, x_2^{k +
+    1}, \dotsc, x_n^k)\\
+  \vdots
+  \min_{x_i} F(x_1^{k + 1}, x_2^{k + 1}, \dotsc, x_i, x_{i + 1}^k, \dotsc,
+  x_n^k) = F(x_1^{k + 1}, \dotsc, x_i^{k + 1}, x_{i + 1}^k, \dotsc, x_n^k) \\
+  \frac{\partial F}{\partial x_i}= 0\\
+  \sum_{j = 1}^{i - 1} a_{ij}x_j^{k + 1} + a_{ii}x_i + \sum_{j = i + 1}^n
+  a_{ij}x_j^k = 0 \\
+  x_i = - \sum_{j = 1}^{i - 1} \frac{a_{ij}}{a_{ii}} x_j^{k = 1} - \sum_{j = i +
+  1}^n \frac{a_{ij}}{a_{ii}}x_j^k 
+\end{gather*}
+
+\subsection{Метод наискорейшего спуска}
+\begin{gather*}
+  \vec{p}^k = -\vec{g}^k \\
+  \alpha^k = \frac{(\vec{g}^k, \vec{g}^k)}{(A \vec{g}^k, \vec{g}^k)} \\
+  \vec{x}^{k + 1} = \vec{x}^k - \alpha^k \vec{g}^k \\
+  \|\vec{x}^k - \overline{\vec{x}}\| \leq
+  \sqrt{\frac{\lambda_{max}}{\lambda_{min}}} (\frac{\lambda_{max} -
+    \lambda_{min}}{\lambda_{max} + \lambda_{min}})^k \|\vec{x}^0
+  -\overline{\vec{x}}\| \text{ --- априорная оценка сходимости}\\
+\end{gather*}
+
+\subsection{Методы сопряженных направлений}
+\begin{gather*}
+   \vec{p}^0, \vec{x}^1, \dotsc, \vec{x}^{n - 1} : (A\vec{p}^i, \vec{p}^j) = 0,\
+   i \neq j
+\end{gather*}
+
+\subsection{Метод сопряженынх градиентов}
+\begin{gather*}
+  \vec{x}^0,\ \vec{p}^0 = -\vec{g}^0,\ \alpha^0 = \frac{(\vec{g}^0,
+    \vec{g}^0)}{(A\vec{g}^0, \vec{g}^0)},\ \vec{x}^1 = \vec{x}^0 - \alpha_0
+  \vec{g}^0 \\ 
+  \vec{p}^1 = -\vec{g}^1 + \beta^0 \vec{p}^0,\ \beta^0 =
+  \frac{(A\vec{p}^0, \vec{p}^0)}{(A\vec{p}^0, \vec{p}^0)},\ \alpha_1 =
+  \frac{(\vec{g}^1, \vec{po}^1)}{(A\vec{p}^1, \vec{p}^1)},\ x^2 = \vec{x}^1 +
+  \alpha^1 \vec{p}^1\\
+  
+\end{gather*}
